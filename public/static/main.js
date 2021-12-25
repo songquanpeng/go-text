@@ -6,12 +6,11 @@ let prefix = ""
 window.addEventListener('load', () => {
     inputElement = document.getElementById("input");
     promptElement = document.getElementById("prompt");
-    document.addEventListener("mousedown", function (event) {
-        console.log("mousedown")
-        inputElement.focus();
-    })
-
-    connection = new WebSocket("ws://" + document.location.host + "/ws");
+    let protocol = "ws://";
+    if (location.protocol !== "http:") {
+        protocol = "wss://"
+    }
+    connection = new WebSocket(protocol + document.location.host + "/ws");
     connection.onopen = function (e) {
         print("", "system: connected to server.");
     };
@@ -23,7 +22,6 @@ window.addEventListener('load', () => {
         print("", `system: error happened.`);
     };
     connection.onmessage = function (e) {
-        console.log(e.data);
         print("", e.data);
     }
 })
