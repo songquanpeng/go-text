@@ -43,3 +43,11 @@ html, body {
 .line {
     line-height: 30px;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+a {
+    color: white;
+}
