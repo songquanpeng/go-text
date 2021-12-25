@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /*overflow-y: hidden;*/
+    height: 100%;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: Consolas, serif;
+}
+
+#console {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    /*overflow-y: hidden;*/
+    line-break: auto;
+}
+
+.prompt {
+    color: #00ff00;
+    font-weight: bolder;
+}
+
+#input {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-family: Consolas, serif;
+    border: none;
+    width: 95%;
+}
+
+#input:focus {
+    outline: none;
+}
+
+.line {
+    line-height: 30px;
+}
