@@ -7,7 +7,7 @@ import (
 
 func GetIndex(c *gin.Context) {
 	c.HTML(http.StatusOK, "index.html", gin.H{
-		"message": "",
+		"msg": "",
 	})
 }
 

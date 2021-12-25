@@ -16,15 +16,12 @@ var (
 )
 
 var ServerUrl = ""
-var UploadPath = "./upload"
 
 //go:embed public
 var fs embed.FS
 
 func init() {
-	if _, err := os.Stat(UploadPath); os.IsNotExist(err) {
-		_ = os.Mkdir(UploadPath, 0777)
-	}
+
 }
 
 func loadTemplate() *template.Template {

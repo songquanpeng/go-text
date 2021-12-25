@@ -25,13 +25,13 @@ func openBrowser(url string) {
 }
 
 func getIp() (ip string) {
-	addrs, err := net.InterfaceAddrs()
+	addresses, err := net.InterfaceAddrs()
 	if err != nil {
 		log.Println(err)
 		return ip
 	}
 
-	for _, a := range addrs {
+	for _, a := range addresses {
 		if ipNet, ok := a.(*net.IPNet); ok && !ipNet.IP.IsLoopback() {
 			if ipNet.IP.To4() != nil {
 				ip = ipNet.IP.String()
