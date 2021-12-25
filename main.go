@@ -40,6 +40,12 @@ func main() {
 	SetIndexRouter(server)
 	SetApiRouter(server)
 
+	hub := newHub()
+	go hub.run()
+	server.GET("/ws", func(c *gin.Context) {
+		serveWs(hub, c.Writer, c.Request)
+	})
+
 	var realPort = os.Getenv("PORT")
 	if realPort == "" {
 		realPort = strconv.Itoa(*port)
